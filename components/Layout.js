@@ -10,7 +10,7 @@ export default function Layout({ children }) {
                 <meta name="description" content="A Decentralized Exchange" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <div className='grid grid-rows-[min-content_1fr_min-content] h-screen'>
+            <div className='grid grid-rows-[min-content_1fr_min-content] gap-10 min-h-screen'>
                 <Header />
                 <main>{children}</main>
                 <Footer />

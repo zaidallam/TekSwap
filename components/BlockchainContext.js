@@ -1,12 +1,13 @@
 import { createContext } from "react";
 import useMetamask from "../hooks/useMetamask";
-import useTekSwap from "../hooks/useTekSwap";
+import useTekSwap, { useTekToken } from "../hooks/useTekSwap";
 
 export const BlockchainContext = createContext();
 
 export const BlockchainContextProvider = ({children}) => {
     const { isConnected, provider, signer, connectWallet, account } = useMetamask();
     const TekSwap = useTekSwap(isConnected, provider, signer);
+    const TekToken = useTekToken(isConnected, provider, signer);
     
     const value = {
         isConnected,
@@ -14,7 +15,8 @@ export const BlockchainContextProvider = ({children}) => {
         signer,
         connectWallet,
         TekSwap,
-        account
+        account,
+        TekToken
     }
 
     return (

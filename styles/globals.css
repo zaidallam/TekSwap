@@ -1,15 +1,108 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+
+@layer utilities {
+
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
 
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  font-family: 'Roboto Condensed', sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+body {
+  background-image: url('/background.jpg');
+  background-color: #151515;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: top;
 }
 
 * {
   box-sizing: border-box;
+}
+
+.custom-loading {
+  display: flex;
+}
+
+.custom-loading .loading-dot {
+  position: relative;
+  width: 2em;
+  height: 2em;
+  margin: 0.8em;
+  border-radius: 50%;
+}
+
+.custom-loading .loading-dot::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  border-radius: inherit;
+  animation: wave 2s ease-out infinite;
+}
+
+.custom-loading .loading-dot:nth-child(1) {
+  background: #F97517;
+}
+
+.custom-loading .loading-dot:nth-child(1)::before {
+  animation-delay: 0.2s;
+}
+
+.custom-loading .loading-dot:nth-child(2) {
+  background: #FA9123;
+}
+
+.custom-loading .loading-dot:nth-child(2)::before {
+  animation-delay: 0.4s;
+}
+
+.custom-loading .loading-dot:nth-child(3) {
+  background: #FBA92E;
+}
+
+.custom-loading .loading-dot:nth-child(3)::before {
+  animation-delay: 0.6s;
+}
+
+.custom-loading .loading-dot:nth-child(4) {
+  background: #FCBF38;
+}
+
+.custom-loading .loading-dot:nth-child(4)::before {
+  animation-delay: 0.8s;
+}
+
+.custom-loading .loading-dot:nth-child(5) {
+  background: #FDD743;
+}
+
+.custom-loading .loading-dot:nth-child(5)::before {
+  animation-delay: 1s;
+}
+
+@keyframes wave {
+
+  50%,
+  75% {
+    transform: scale(2.5);
+  }
+
+  80%,
+  100% {
+    opacity: 0;
+  }
 }

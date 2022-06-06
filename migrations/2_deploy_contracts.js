@@ -6,7 +6,7 @@ module.exports = async function(deployer) {
   const token = await TekToken.deployed()
 
   await deployer.deploy(TekSwap, token.address);
-  const ethSwap = await TekSwap.deployed()
+  const tekSwap = await TekSwap.deployed()
 
-  await token.transfer(ethSwap.address, '1000000');
+  await token.transfer(tekSwap.address, '1000000000000000000000000');
 };

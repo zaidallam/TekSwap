@@ -29,7 +29,7 @@ contract TekSwap {
     function buy() public payable {
         uint256 tokenAmount = msg.value * rate;
 
-        require(token.balanceOf(address(this)) >= tokenAmount);
+        require(token.balanceOf(address(this)) >= tokenAmount, "Token liquidity is insufficient");
 
         token.transfer(msg.sender, tokenAmount);
         emit Purchased(msg.sender, address(token), tokenAmount, rate);
@@ -40,7 +40,7 @@ contract TekSwap {
 
         uint256 etherAmount = _amount / rate;
 
-        require(address(this).balance >= etherAmount);
+        require(address(this).balance >= etherAmount, "Ether liquidity is insufficient");
 
         token.transferFrom(msg.sender, address(this), _amount);
         payable(msg.sender).transfer(etherAmount);
