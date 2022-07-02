@@ -1,5 +1,5 @@
 import '../styles/globals.css'
-import Layout from '../components/layout'
+import Layout from '../components/Layout'
 import { BlockchainContextProvider } from '../components/BlockchainContext'
 
 function MyApp({ Component, pageProps }) {
