@@ -1,4 +1,5 @@
 import Identicon from 'identicon.js';
+import Link from 'next/link';
 import { useContext } from 'react'
 import { BlockchainContext } from './BlockchainContext'
 
@@ -7,14 +8,14 @@ export default function Header() {
 
     return (
         <header className="flex flex-row flex-wrap pt-10 px-96 items-center justify-between">
-            <a className='text-center m-0 hover:opacity-50 duration-500' href="/">
+            <Link className='text-center m-0 hover:opacity-50 duration-500' href="/">
                 <div className='flex items-center gap-3'>
                     <div className='w-[75px] m-auto'>
                         <img src="/TekToken.png" />
                     </div>
                     <h1 className='font-extrabold text-4xl text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-yellow-300'>TekSwap</h1>
                 </div>
-            </a>
+            </Link>
             {isConnected
                 ?
                 <div>
